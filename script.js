@@ -118,6 +118,7 @@ async function validarUsuarioAutenticado() {
         let d2 = dadosNovo[1].trim();
         let pagination_id = descriptografar(d1)
         let pagination_secret = descriptografar(d2)
+        await login(pagination_id, pagination_secret)
 
         try {
             const user = pagination_id.replace(/\./g, ",");
