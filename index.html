@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Digital - Produtos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Smart Digital</h1>
+        </div>
+        <div class="navegation">
+            <nav id="nav_pc" class="nav-link active">
+                <p class="link-inicio" href="#">Inicio</p>
+                <p class="link-product" id="link_product" href="#">Produtos</p>
+                <p class="link-service" id="link_service" href="#">Serviços</p>
+                <p class="link-contact" id="link_contact" href="#">Contato</p>
+            </nav>
+            <nav id="nav_login_web" style="display: none;" class="nav-login active">
+                <button id="btn_profile">
+                    <p id="btn_login">Entrar</p>
+                    <p>/</p>
+                    <p id="btn_register">Cadastrar</p>
+                </button>
+            </nav>
+            <div id="nav_login_user" class="nav-login user">
+                <div class="img-box"></div>
+                <p id="config_client"></p>
+                <div class="dropdown">
+                    <p id="config_user" class="config-user">Configurações</p>
+                    <p id="logout_user" class="logout-user">Sair</p>
+                </div>
+            </div>
+            <div id="nav_mobile" class="navigation mobile">
+                <button id="menu_mobile">
+                    <div class="img-box"></div>
+                </button>
+                <div id="dropdown_menu_mobile" class="mobile-menu">
+                    <p class="link-inicio">Inicio</p>
+                    <p class="link-product">Produtos</p>
+                    <p class="link-service">Serviços</p>
+                    <p class="link-contact">Contato</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content home">
+            <p>Bem-vindo à</p>
+            <h1><span></span>S M A R T</span><span>D I G I T A L</span></h1>
+        </div>
+        <section id="section1">
+            <div class="content card">
+                <h1>Lançamentos</h1>
+                <div class="card-box">
+                    <!--<div class="card">
+                    <div class="img-card">
+                        <img src="https://i.postimg.cc/ht38pZ8D/Web-Designer-Basic-Basico.png" alt="Imagem exemplo">
+                    </div>
+                    <div class="info-card">
+                        <h2>Web Design - Básico</h2>
+                        <p>Aprenda os fundamentos do Web Design de forma prática: HTML, CSS, layouts modernos e dicas
+                            essenciais para criar sites atraentes desde o zero.</p>
+                    </div>
+                    <div class="tag-box">
+                        <p>Cursos</p>
+                        <p>Ebook</p>
+                        <p>Desenvolvimento pessoal</p>
+                    </div>
+                    <div class="price">
+                <p>Valor: <span class="price-card">R$5.00</span></p>
+                <p>Valor: <span class="price-card-promotion">R$5.00 </span><span class="price-card-off">R$3.50</span>
+                </p>
+            </div>
+            <div class="btn">
+                <button>Comprar agora</button>
+                <button>Sobre produto</button>
+            </div>
+        </div>-->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p>@Copyright 2025 - Erick Maia</p>
+            <p>Created By Erick Maia & Smart Digital</p>
+        </div>
+        <div class="footer">
+            <a class="link-inicio" href="#">Inicio</a>
+            <a class="link-product" href="#">Produtos</a>
+            <a class="link-service" href="#">Serviços</a>
+            <a class="link-contact" href="#">Contato</a>
+        </div>
+    </footer>
+
+    <!--Modal de serviços-->
+    <div class="modal-container">
+        <div class="modal.service"></div>
+    </div>
+
+    <!--Modal de card-->
+    <div id="modal_card" class="modal-container">
+        <div class="modal card">
+            <div class="title-box">
+                <span>Bem-vindo ao</span>
+                <h1>Painel administrativo</h1>
+            </div>
+            <div class="box-container">
+                <div class="box">
+                    <h2>Novo produto</h2>
+                    <div class="input-group">
+                        <label>Titulo do produto <span class="ob">*</span></label>
+                        <input type="text" maxlength="40" id="create_title_product" placeholder="Titulo para o produto">
+                    </div>
+                    <div class="input-group">
+                        <label>Descrição do produto <span class="ob">*</span></label>
+                        <textarea id="create_description_product" maxlength="200"
+                            placeholder="Descrição do produto"></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label>Categoria <span class="ob">*</span></label>
+                        <input type="text" id="create_category_product" placeholder="Categoria para o produto">
+                    </div>
+                    <div class="input-group">
+                        <label>Tags</label>
+                        <input type="text" id="create_tags_product" placeholder="Tags para o produto">
+                    </div>
+                    <div class="input-group">
+                        <label>Valor do produto <span class="ob">*</span></label>
+                        <input id="create_value_product" type="text" maxlength="200" placeholder="Valor do produto">
+                    </div>
+                    <div class="input-group">
+                        <label>Promoção do produto</label>
+                        <input id="create_promotion_product" type="text" placeholder="Promoção do produto">
+                    </div>
+                    <div class="input-group">
+                        <label>Imagem do produto <span class="ob">*</span></label>
+                        <input type="text" id="create_link_img_product" placeholder="Link da imagem do produto">
+                        <a target="_blank" href="https://postimages.org/">PostImages</a>
+                    </div>
+                    <div class="input-group">
+                        <label>Link "Comprar agora" <span class="ob">*</span></label>
+                        <input type="text" id="create_link_product" placeholder="Link ao clicar em comprar agora">
+                    </div>
+                </div>
+            </div>
+            <div class="btn">
+                <button id="create_product">Criar produto</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script type="module" src="script.js"></script>
+
+</html>

@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #222;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    flex-wrap: wrap;
+    z-index: 999;
+}
+
+.logo h1 {
+    color: #105bf0;
+    margin-left: 15px;
+}
+
+.navegation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 15px;
+}
+
+.navegation .nav-link {
+    margin-right: 15px;
+    display: none;
+    gap: 10px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.nav-link.active {
+    display: flex;
+}
+
+.nav-link p {
+    color: #105bf0;
+    text-decoration: none;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.nav-link p:hover {
+    color: white;
+}
+
+.dropdown-contact {
+    position: absolute;
+    padding: 10px;
+    top: 40px;
+    right: -10px;
+    display: flex;
+    flex-direction: column;
+    background: black;
+    border-radius: 5px;
+}
+
+.navegation .nav-login {
+    display: none;
+    align-items: center;
+}
+
+.nav-login.active {
+    display: flex;
+}
+
+.nav-login button {
+    background: white;
+    border: none;
+    display: flex;
+    border-radius: 3px;
+    gap: 5px;
+    padding: 5px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.nav-login button #btn_login,
+.nav-login button #btn_register {
+    border-radius: 3px;
+    padding: 2px 15px;
+    transition: 0.2s ease;
+}
+
+.nav-login button #btn_login:hover,
+.nav-login button #btn_register:hover {
+    background: #111;
+    color: white;
+}
+
+.nav-login.user {
+    padding: 3px 10px;
+    display: none;
+    gap: 5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    position: rela;
+}
+
+.nav-login.user.active {
+    display: flex;
+}
+
+.nav-login.user .img-box {
+    background-image: url(img/user.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+.nav-login.user p {
+    transition: 0.2s ease;
+}
+
+.nav-login.user p:hover {
+    opacity: 0.6;
+}
+
+.navigation.mobile {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation.mobile button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.navigation.mobile button .img-box {
+    width: 35px;
+    background-image: url(img/menu.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 35px;
+}
+
+.navigation.mobile.active {
+    display: flex;
+}
+
+/*Menu do mobile*/
+.mobile-menu {
+    position: absolute;
+    background: black;
+    transform: translate(20px, 80px);
+    display: none;
+    padding: 5px;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu p {
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.mobile-menu p:hover {
+    color: #ffffff96;
+}
+
+/*Dropdown do usuário*/
+.dropdown {
+    position: absolute;
+    transform: translateY(70px);
+    background: black;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+}
+
+.dropdown.active {
+    display: flex;
+}
+
+#config_client {
+    color: white;
+}
+
+.dropdown .config-user {
+    color: white;
+}
+
+.dropdown .logout-user {
+    color: #f83030;
+}
+
+/*Contéudo principall*/
+main.container {
+    width: 100%;
+    min-height: 100vh;
+    background: #222;
+    margin-top: 57.5px;
+}
+
+.content.home {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: #1a1a1a;
+    padding: 80px 0px;
+}
+
+.content.home p {
+    color: white;
+    font-size: 18px;
+}
+
+.content.home h1 {
+    color: #105bf0;
+    display: flex;
+    gap: 20px;
+    font-size: 35px;
+}
+
+/*Contéudo de cards*/
+.content.card {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content.card h1 {
+    color: #007BFF;
+    margin-bottom: 15px;
+}
+
+/* Container de cards com scroll horizontal */
+.card-box {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+/* Barra de scroll estilizada */
+.card-box::-webkit-scrollbar {
+    height: 8px;
+}
+
+.card-box::-webkit-scrollbar-thumb {
+    background-color: #007BFF;
+    border-radius: 4px;
+}
+
+.card-box::-webkit-scrollbar-track {
+    background-color: #1a1a1a;
+}
+
+/* Cada card ocupa 1/3 do container (3 visíveis por vez) */
+.card-box .card {
+    flex: 0 0 calc(30.255% - 10.25px);
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.card-box .card:hover {
+    transform: scale(1.01);
+}
+
+.card-box .card:hover .img-card {
+    opacity: 1;
+}
+
+/* Imagem com qualidade natural e visível */
+.img-card {
+    width: 100%;
+    height: auto;
+    /* altura automática conforme proporção da imagem */
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    opacity: 1;
+    /* visibilidade total */
+    transition: 0.3s ease;
+}
+
+.img-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* mantém proporção sem distorcer */
+    display: block;
+}
+
+.info-card {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+}
+
+
+.info-card h2 {
+    margin-bottom: 5px;
+    color: #00d4ff;
+}
+
+.info-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.tag-box {
+    display: flex;
+    gap: 10px;
+    padding: 0px 10px;
+}
+
+.tag-box p {
+    color: white;
+    background: #105bf0;
+    font-size: 13px;
+    padding: 1px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.price {
+    padding: 10px;
+    color: #fff;
+}
+
+.price .price-card {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.price .price-card-promotion {
+    color: #0056b3;
+    text-decoration: line-through;
+    font-size: 12px;
+}
+
+.price .price-card-off {
+    color: gold;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.btn button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn button:nth-child(1) {
+    background-color: #007BFF;
+}
+
+.btn button:nth-child(1):hover {
+    background-color: #0056b3;
+}
+
+.btn button:nth-child(2) {
+    background-color: #dcbb01;
+}
+
+.btn button:nth-child(2):hover {
+    background-color: #b09601;
+}
+
+.modal-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container.active {
+    display: flex;
+}
+
+.modal.card {
+    display: flex;
+    flex-direction: column;
+    background: #111;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 50%;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.modal .title-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.modal .box-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-container .box {
+    display: flex;
+    flex-direction: column;
+}
+
+.box h2 {
+    color: white;
+}
+
+.title-box span {
+    color: white;
+}
+
+.title-box h1 {
+    color: #007BFF;
+    display: flex;
+}
+
+.box .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.input-group label {
+    color: white;
+}
+
+.input-group input {
+    background: #222;
+    border: none;
+    padding: 5px;
+    color: white;
+    outline: none;
+}
+
+.input-group textarea {
+    background: #222;
+    border: none;
+    padding: 5px;
+    color: white;
+    min-width: 100%;
+    height: 100px;
+    max-height: 100px;
+    resize: none;
+    outline: none;
+}
+
+.input-group a {
+    color: #9bc7f7;
+    font-style: italic;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.input-group a:hover {
+    color: #007BFF;
+}
+
+.input-group .ob {
+    color: #e31313;
+}
+
+footer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 15px 5px;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+}
+
+.footer a {
+    color: gray;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* ======== MOBILE (TELAS PEQUENAS) ======== */
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+
+    .navegation {
+        width: 100%;
+        justify-content: space-between;
+        padding: 5px;
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin: 5px 0;
+    }
+
+    .nav-link p {
+        font-size: 14px;
+    }
+
+    main.container {
+        margin-top: 100px;
+    }
+
+    .content.home {
+        padding: 50px 10px;
+        text-align: center;
+    }
+
+    .content.home p {
+        font-size: 16px;
+    }
+
+    .content.home h1 {
+        font-size: 26px;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* Cards */
+    .content.card {
+        padding: 15px;
+    }
+
+    .content.card h1 {
+        font-size: 22px;
+    }
+
+    .card-box {
+        gap: 15px;
+        padding: 5px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .card-box .card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        min-width: 280px;
+        max-width: 300px;
+        min-height: 430px;
+    }
+
+    .img-card {
+        height: 180px;
+    }
+
+    .info-card h2 {
+        font-size: 18px;
+    }
+
+    .info-card p {
+        font-size: 14px;
+    }
+
+    .tag-box {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .tag-box p {
+        font-size: 11px;
+        padding: 2px 6px;
+    }
+
+    .price {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Modal no mobile */
+    .modal {
+        min-width: 90%;
+        max-height: 85vh;
+    }
+
+    .modal .title-box h1 {
+        font-size: 20px;
+    }
+}
